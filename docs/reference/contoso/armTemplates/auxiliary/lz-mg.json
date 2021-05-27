@@ -180,7 +180,6 @@
             // Conditionally assign policy to deny inbound RDP
             "condition": "[equals(parameters('denyRdp'), 'Yes')]",
             "type": "Microsoft.Authorization/policyAssignments",
-            "scope": "/",
             "apiVersion": "2018-05-01",
             "name": "[variables('policyAssignmentNames').denyRdp]",
             "properties": {
