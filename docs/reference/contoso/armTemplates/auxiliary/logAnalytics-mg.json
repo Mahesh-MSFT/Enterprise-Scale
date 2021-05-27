@@ -90,6 +90,7 @@
             // Conditionally make role assignment for the policy that will deploy Log Analytics and Azure Automation
             "condition": "[and(not(empty(parameters('managementSubscriptionId'))),equals(parameters('enableLogAnalytics'), 'Yes'))]",
             "type": "Microsoft.Authorization/roleAssignments",
+            "scope": "/",
             "apiVersion": "2019-04-01-preview",
             "name": "[variables('roleAssignmentNames').deployLogAnalytics]",
             "dependsOn": [
