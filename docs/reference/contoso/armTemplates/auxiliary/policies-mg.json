@@ -11,6 +11,7 @@
     }
   },
   "variables": {
+    //"scope": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]",
     "scope": "/",
     "policies": {
       "policyDefinitions": [
@@ -1015,7 +1016,7 @@
                         "hubResourceId": {
                           "value": "[[parameters('hubResourceId')]"
                         },
-                         "dnsServers": {
+                        "dnsServers": {
                           "value": "[[parameters('dnsServers')]"
                         }
                       },
