@@ -414,7 +414,6 @@
             "name": "[variables('deploymentNames').policyDeploymentName]",
             "location": "[deployment().location]",
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
-            //"scope": "/",
             "dependsOn": [
                 "[variables('deploymentNames').mgmtGroupDeploymentName]"
             ],
@@ -437,7 +436,6 @@
             "name": "[concat('preparingToLaunch', copyIndex())]",
             "location": "[deployment().location]",
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
-            //"scope": "/",
             "dependsOn": [
                 "[variables('deploymentNames').policyDeploymentName]"
             ],
