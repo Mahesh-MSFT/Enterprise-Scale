@@ -742,7 +742,7 @@
             "dependsOn": [
                 "[variables('deploymentNames').policyDeploymentName]",
                 "policyCompletion",
-                "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'), '/', parameters('enterpriseScaleCompanyPrefix'), '-landingzones')]"
+                "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'), '-landingzones')]"
             ],
             "location": "[deployment().location]",
             "properties": {
