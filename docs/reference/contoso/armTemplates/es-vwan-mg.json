@@ -615,33 +615,6 @@
             "properties": {}
         },
         {
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2019-10-01",
-            "name": "[concat('waiting', copyIndex())]",
-            "location": "[deployment().location]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
-            "dependsOn": [
-                "[variables('deploymentNames').mgmtGroupDeploymentName]",
-                "[variables('deploymentNames').policyDeploymentName]"
-            ],
-            "copy": {
-                "batchSize": 1,
-                "count": 20,
-                "mode": "Serial",
-                "name": "roleCompletion"
-            },
-            "properties": {
-                "mode": "Incremental",
-                "template": {
-                    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
-                    "contentVersion": "1.0.0.0",
-                    "parameters": {},
-                    "resources": [],
-                    "outputs": {}
-                }
-            }
-        },        
-        {
             "condition": "[and(not(empty(parameters('managementSubscriptionId'))),equals(parameters('enableLogAnalytics'), 'Yes'))]",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-05-01",
@@ -650,8 +623,7 @@
             "dependsOn": [
                 "[variables('deploymentNames').mgmtGroupDeploymentName]",
                 "[variables('deploymentNames').policyDeploymentName]",
-                "policyCompletion",
-                "roleCompletion"
+                "policyCompletion"
             ],
             "location": "[deployment().location]",
             "properties": {
