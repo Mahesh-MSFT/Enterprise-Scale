@@ -801,6 +801,7 @@
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
             "name": "[variables('deploymentNames').diagAndSecDeploymentName]",
             "dependsOn": [
+                "[variables('deploymentNames').mgmtGroupDeploymentName]",
                 "[variables('deploymentNames').monitoringDeploymentName]"
             ],
             "location": "[deployment().location]",
