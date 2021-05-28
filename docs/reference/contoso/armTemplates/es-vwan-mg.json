@@ -540,8 +540,7 @@
             "apiVersion": "2019-10-01",
             "name": "[concat('preparingToLaunch', copyIndex())]",
             "location": "[deployment().location]",
-            //"scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
-            "scope": "/",
+            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
             "dependsOn": [
                 "[variables('deploymentNames').policyDeploymentName]"
             ],
@@ -618,8 +617,7 @@
             "condition": "[and(not(empty(parameters('managementSubscriptionId'))),equals(parameters('enableLogAnalytics'), 'Yes'))]",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-05-01",
-            //"scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'), '-management')]",
-            "scope": "/",
+            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'), '-management')]",
             "name": "[variables('deploymentNames').monitoringDeploymentName]",
             "dependsOn": [
                 "[variables('deploymentNames').policyDeploymentName]",
