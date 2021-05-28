@@ -621,6 +621,7 @@
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'), '-management')]",
             "name": "[variables('deploymentNames').monitoringDeploymentName]",
             "dependsOn": [
+                "[variables('deploymentNames').mgmtGroupDeploymentName]",
                 "[variables('deploymentNames').policyDeploymentName]",
                 "policyCompletion"
             ],
