@@ -648,6 +648,7 @@
                 }
             }
         },
+        /*
         {
             "condition": "[and(not(empty(parameters('managementSubscriptionId'))), or(or(or(or(or(equals(parameters('enableSecuritySolution'), 'Yes'), equals(parameters('enableAgentHealth'), 'Yes')), equals(parameters('enableChangeTracking'), 'Yes')), equals(parameters('enableUpdateMgmt'), 'Yes'), equals(parameters('enableActivityLog'), 'Yes')), equals(parameters('enableVmInsights'), 'Yes')), equals(parameters('enableServiceMap'), 'Yes'), equals(parameters('enableSqlAssessment'), 'Yes')))]",
             "type": "Microsoft.Resources/deployments",
@@ -698,6 +699,7 @@
                 }
             }
         },
+        */
         {
             "condition": "[not(empty(parameters('identitySubscriptionId')))]",
             "type": "Microsoft.Resources/deployments",
