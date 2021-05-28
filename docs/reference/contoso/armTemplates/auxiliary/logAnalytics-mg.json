@@ -1,5 +1,5 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "topLevelManagementGroupPrefix": {
@@ -62,8 +62,7 @@
                 "description": "Deploy-Log-Analytics",
                 "displayName": "Deploy-Log-Analytics",
                 "policyDefinitionId": "[variables('policyDefinitions').deployLogAnalytics]",
-                //"scope": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'), '-management')]",
-                "scope": "[tenantResourceId('Microsoft.Management/managementGroups', concat(parameters('topLevelManagementGroupPrefix'), '-management'))]",
+                "scope": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'), '-management')]",
                 "parameters": {
                     "workspaceName": {
                         "value": "[concat(parameters('topLevelManagementGroupPrefix'), '-la')]"
