@@ -11,8 +11,7 @@
     }
   },
   "variables": {
-    //"scope": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]",
-    "scope": "/",
+    "scope": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]",
     "policies": {
       "policyDefinitions": [
         {
