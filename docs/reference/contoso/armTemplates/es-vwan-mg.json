@@ -618,9 +618,11 @@
             "condition": "[and(not(empty(parameters('managementSubscriptionId'))),equals(parameters('enableLogAnalytics'), 'Yes'))]",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-05-01",
-            "scope": "[concat('Microsoft.Management/managementGroups/', concat(parameters('enterpriseScaleCompanyPrefix'), '-management'))]",
+            //"scope": "[concat('Microsoft.Management/managementGroups/', concat(parameters('enterpriseScaleCompanyPrefix'), '-management'))]",
+            "scope": "/",
             "name": "[variables('deploymentNames').monitoringDeploymentName]",
             "dependsOn": [
+                "tenantResourceId('Microsoft.Management/managementGroups', concat(parameters('enterpriseScaleCompanyPrefix'), '-management'))",
                 "[variables('deploymentNames').mgmtGroupDeploymentName]",
                 "[variables('deploymentNames').policyDeploymentName]",
                 "policyCompletion"
