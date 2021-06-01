@@ -58,6 +58,9 @@
             "identity": {
                 "type": "SystemAssigned"
             },
+            "dependsOn": [
+                "[tenantResourceId('Microsoft.Management/managementGroups', concat(parameters('topLevelManagementGroupPrefix'), '-management'))]"
+            ],
             "properties": {
                 "description": "Deploy-Log-Analytics",
                 "displayName": "Deploy-Log-Analytics",
