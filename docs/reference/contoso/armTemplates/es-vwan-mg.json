@@ -624,8 +624,7 @@
             "dependsOn": [
                 "[variables('deploymentNames').mgmtGroupDeploymentName]",
                 "[variables('deploymentNames').policyDeploymentName]",
-                "policyCompletion",
-                "rolePropogation"
+                "policyCompletion"
             ],
             "location": "[deployment().location]",
             "properties": {
