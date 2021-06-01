@@ -949,7 +949,7 @@
             "location": "[deployment().location]",
             "dependsOn": [
                 //"[variables('deploymentNames').lzDeploymentName]",
-                "[variables('deploymentNames').diagAndSecDeploymentName]",
+                //"[variables('deploymentNames').diagAndSecDeploymentName]",
                 "[variables('deploymentNames').mgmtGroupDeploymentName]",
                 "[variables('deploymentNames').monitoringDeploymentName]",
                 //"[variables('deploymentNames').monitoringSolutionsDeploymentName]",
