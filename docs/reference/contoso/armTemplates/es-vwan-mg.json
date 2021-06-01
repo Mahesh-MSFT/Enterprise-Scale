@@ -628,7 +628,7 @@
                 "batchSize": 1,
                 "count": 20,
                 "mode": "Serial",
-                "name": "policyCompletion"
+                "name": "rolePropogation"
             },
             "properties": {
                 "mode": "Incremental",
