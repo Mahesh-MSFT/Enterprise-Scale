@@ -902,7 +902,7 @@
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'), '-connectivity')]",
             "name": "[variables('deploymentNames').connectivityDeploymentName]",
             "dependsOn": [
-                "[variables('deploymentNames').diagAndSecDeploymentName]",
+                //"[variables('deploymentNames').diagAndSecDeploymentName]",
                 "policyCompletion"
             ],
             "location": "[deployment().location]",
