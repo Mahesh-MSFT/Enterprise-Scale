@@ -62,7 +62,7 @@
                 "description": "Deploy-Log-Analytics",
                 "displayName": "Deploy-Log-Analytics",
                 "policyDefinitionId": "[variables('policyDefinitions').deployLogAnalytics]",
-                //"scope": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'), '-management')]",
+                "scope": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'), '-management')]",
                 "parameters": {
                     "workspaceName": {
                         "value": "[concat(parameters('topLevelManagementGroupPrefix'), '-la')]"
