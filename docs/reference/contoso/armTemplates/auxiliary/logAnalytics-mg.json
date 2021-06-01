@@ -107,7 +107,6 @@
             "condition": "[and(not(empty(parameters('managementSubscriptionId'))),equals(parameters('enableLogAnalytics'), 'Yes'))]",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-10-01",
-            "scope": "/",
             "name": "[variables('resourceDeploymentName')]",
             "location": "[deployment().location]",
             "dependsOn": [
