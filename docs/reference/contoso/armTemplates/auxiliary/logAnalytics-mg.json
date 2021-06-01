@@ -52,7 +52,7 @@
             // Conditionally assign policy to enable Log Analytics and Azure Automation
             "condition": "[and(not(empty(parameters('managementSubscriptionId'))),equals(parameters('enableLogAnalytics'), 'Yes'))]",
             "type": "Microsoft.Authorization/policyAssignments",
-            "scope": "/",
+            "scope": "[tenantResourceId('Microsoft.Management/managementGroups',concat(parameters('topLevelManagementGroupPrefix'), '-management'))]",
             "apiVersion": "2018-05-01",
             "name": "[variables('policyAssignmentNames').loganalytics]",
             "location": "[deployment().location]",
