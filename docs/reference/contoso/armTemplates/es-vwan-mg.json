@@ -622,7 +622,6 @@
             "scope": "/",
             "name": "[variables('deploymentNames').monitoringDeploymentName]",
             "dependsOn": [
-                "[tenantResourceId('Microsoft.Management/managementGroups', concat(parameters('enterpriseScaleCompanyPrefix'), '-management'))]",
                 "[variables('deploymentNames').mgmtGroupDeploymentName]",
                 "[variables('deploymentNames').policyDeploymentName]",
                 "policyCompletion"
