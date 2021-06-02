@@ -22,7 +22,7 @@ New-AzManagementGroupDeployment `
   Remove-AzManagementGroupDeployment -ManagementGroupId "old-3-mg" -Name "old-3-mg-deployment"
 
   New-AzManagementGroupDeployment `
-  -Name 'old-3-mg-deployment' `
+  -Name 'old-3-mg-deployment-2' `
   -Location "uksouth" `
   -ManagementGroupId "old-3-mg" `
   -TemplateUri "https://raw.githubusercontent.com/Mahesh-MSFT/Enterprise-Scale/deploy-at-mg/docs/reference/contoso/armTemplates/es-vwan-mg.json" `
@@ -46,4 +46,4 @@ New-AzManagementGroupDeployment `
     Remove-AzManagementGroup -GroupName $child.Name
   }
   
-  
+  Remove-AzPolicyDefinition -ManagementGroupName 'old-3-mg'
