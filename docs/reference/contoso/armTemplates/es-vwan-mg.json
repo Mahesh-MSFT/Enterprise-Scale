@@ -620,7 +620,7 @@
             "apiVersion": "2019-05-01",
             //"scope": "[concat('Microsoft.Management/managementGroups/', concat(parameters('enterpriseScaleCompanyPrefix'), '-management'))]",
             //"scope": "/",
-            "scope": "[tenantResourceId('Microsoft.Management/managementGroups',concat(parameters('enterpriseScaleCompanyPrefix'), '/', parameters('enterpriseScaleCompanyPrefix'), '-management'))]",
+            "scope": "[tenantResourceId('Microsoft.Management/managementGroups', concat(parameters('enterpriseScaleCompanyPrefix'), '/', parameters('enterpriseScaleCompanyPrefix'), '-management'))]",
             "name": "[variables('deploymentNames').monitoringDeploymentName]",
             "dependsOn": [
                 "[variables('deploymentNames').mgmtGroupDeploymentName]",
