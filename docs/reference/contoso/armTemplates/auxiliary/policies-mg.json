@@ -12,7 +12,7 @@
   },
   "variables": {
     //"scope": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]",
-    "scope": "/",
+    "scope": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('topLevelManagementGroupPrefix'))]",
     "policies": {
       "policyDefinitions": [
         {
