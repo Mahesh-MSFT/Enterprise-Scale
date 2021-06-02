@@ -46,4 +46,12 @@ New-AzManagementGroupDeployment `
     Remove-AzManagementGroup -GroupName $child.Name
   }
   
-  Remove-AzPolicyDefinition -ManagementGroupName 'old-3-mg'
+  $polsets = Get-AzPolicySetDefinition -ManagementGroupName 'old-3-mg' -Custom
+  foreach ($polset in $polsets) {
+    Remove-AzPolicySetDefinition -ManagementGroupName 'old-3-mg' -Name  $polset.Name -Force
+  }
+
+  $pols = Get-AzPolicyDefinition -ManagementGroupName 'old-3-mg' -Custom
+  foreach ($pol in $pols) {
+    Remove-AzPolicyDefinition -ManagementGroupName 'old-3-mg' -Name  $pol.Name -Force
+  }
